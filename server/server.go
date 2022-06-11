@@ -6,10 +6,12 @@ import (
 
 func main() {
 
-	http.Handle("/assets/", http.StripPrefix("/assets/", http.FileServer(http.Dir("assets"))))
+	http.Handle("/router/assets/", http.StripPrefix("/router/assets/", http.FileServer(http.Dir("router/assets"))))
 
-	http.Handle("/pages/", http.StripPrefix("/pages/", http.FileServer(http.Dir("pages"))))
+	http.Handle("/router/pages/", http.StripPrefix("/router/pages/", http.FileServer(http.Dir("router/pages"))))
 
 	http.ListenAndServe(":8080", nil)
+
+	//router.HandleRoutes()
 
 }

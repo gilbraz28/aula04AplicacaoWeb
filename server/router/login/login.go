@@ -1,7 +1,9 @@
 package login
 
-import "fmt"
+import (
+	"net/http"
+)
 
-func Login(msg string) {
-	fmt.Println(msg)
+func Index(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./pages/login.html")
 }

@@ -1,8 +1,16 @@
 package router
 
-import "fmt"
+import (
+	"net/http"
 
-func HandleRoutes() {
+	"github.com/gilbraz28/aula04AplicacaoWeb/server/router/account"
+	"github.com/gilbraz28/aula04AplicacaoWeb/server/router/login"
+)
 
-	fmt.Println("teste")
+func HandleRoutes(w http.ResponseWriter, r *http.Request) {
+
+	http.HandleFunc("/", login.Index)
+
+	http.HandleFunc("/", account.Index)
+
 }
