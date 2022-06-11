@@ -14,6 +14,6 @@ func main() {
 
 	http.ListenAndServe(":8080", nil)
 
-	login.Login("teste")
+	login.Login("t")
 
 }
