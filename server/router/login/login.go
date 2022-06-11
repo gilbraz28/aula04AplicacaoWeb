@@ -5,5 +5,5 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	http.ServeFile(w, r, "./pages/login.html")
+	http.ServeFile(w, r, "./pages/index.html")
 }

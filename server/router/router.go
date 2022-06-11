@@ -7,10 +7,10 @@ import (
 	"github.com/gilbraz28/aula04AplicacaoWeb/server/router/login"
 )
 
-func HandleRoutes(w http.ResponseWriter, r *http.Request) {
+func HandleRoutes() {
 
 	http.HandleFunc("/", login.Index)
 
-	http.HandleFunc("/", account.Index)
+	http.HandleFunc("/account", account.Index)
 
 }
