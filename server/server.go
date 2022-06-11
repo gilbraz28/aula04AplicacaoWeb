@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/gilbraz28/aula04AplicacaoWeb/server/src/login"
+	"github.com/gilbraz28/aula04AplicacaoWeb/server/src/router"
 )
 
 func main() {
@@ -14,6 +15,7 @@ func main() {
 
 	http.ListenAndServe(":8080", nil)
 
-	login.Login("t")
+	login.Login("l")
 
+	router.HandleRoutes()
 }
