@@ -3,6 +3,7 @@ var form = document.getElementsByTagName('form')[0];
 form.addEventListener("submit", getData)
 
 function sendData(method, uri, header, data, serverResponse) {
+    alert("SendData")
     let httpRequest = new XMLHttpRequest();
 
     httpRequest.open(method, uri);
@@ -15,20 +16,21 @@ function sendData(method, uri, header, data, serverResponse) {
 }
 
 function getData(event) {
+    alert("getData")
     event.preventDefault();
 
     //EXEMPLO: Formato normal, apenas envio dos dados
     //let data =  new FormData(form);
     //EXEMPLO: Formato JSON
 
-    // let data = {
-    // 	name: form.name.value,
-    // 	lastname: form.lastname.value,
-    // 	email: form.email.value,
-    // 	password: form.password.value,
-    // 	confirm: form.confirm.value,
-    // 	accept: form.accept.checked
-    // };
+    let data = {
+    	name: form.name.value,
+    	lastname: form.lastname.value,
+    	email: form.email.value,
+    	password: form.password.value,
+    	confirm: form.confirm.value,
+    	accept: form.accept.checked
+    };
 
     //let json =  JSON.stringify(data);
 
@@ -53,6 +55,9 @@ function getData(event) {
             400:() => { alert("Este cadastro já existe."); },
             404:() => { alert("Tente realizar o cadastro mais tarde."); }
         }
+
+        alert("response")
+        alert(response.status)
 
         if (responseStatus[response.status]) {
             let responseUser = responseStatus[response.status];
